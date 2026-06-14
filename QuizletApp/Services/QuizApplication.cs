@@ -3,7 +3,10 @@ using QuizletApp.Models;
 
 namespace QuizletApp.Services;
 
-public sealed class QuizApplication(IQuizCatalogService catalogService, IUserInteraction ui)
+public sealed class QuizApplication(
+    IQuizCatalogService catalogService,
+    IQuizSessionService sessionService,
+    IUserInteraction ui)
 {
     public Task RunAsync()
     {
@@ -78,18 +81,15 @@ public sealed class QuizApplication(IQuizCatalogService catalogService, IUserInt
     {
         while (true)
         {
-            var randomized = cards
-                .OrderBy(_ => Random.Shared.Next())
-                .ToList();
+            var session = sessionService.StartSession(cards, shuffle: true);
 
             ui.WriteLine("Press Enter to reveal each answer. Type q and press Enter to quit.");
             ui.WriteLine();
 
-            for (var i = 0; i < randomized.Count; i++)
+            while (sessionService.TryGetPrompt(session, out var prompt))
             {
-                var card = randomized[i];
-                ui.WriteLine($"Card {i + 1}/{randomized.Count}");
-                ui.WriteLine($"Q: {card.Question}");
+                ui.WriteLine($"Card {prompt.CardNumber}/{prompt.TotalCards}");
+                ui.WriteLine($"Q: {prompt.Question}");
                 ui.Write("Reveal answer (Enter/q): ");
 
                 var revealInput = ui.ReadLine();
@@ -98,8 +98,11 @@ public sealed class QuizApplication(IQuizCatalogService catalogService, IUserInt
                     return;
                 }
 
-                ui.WriteLine($"A: {card.Answer}");
+                var answer = sessionService.RevealAnswer(session);
+                ui.WriteLine($"A: {answer}");
                 ui.WriteLine();
+
+                sessionService.MoveNext(session);
             }
 
             ui.Write("Round complete. Run again with a new random order? (y/n): ");

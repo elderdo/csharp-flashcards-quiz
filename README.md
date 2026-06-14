@@ -7,6 +7,16 @@ This workspace contains a simple C# console app that reads Quizlet-style flashca
 - QuizletApp: main app
 - QuizletApp.Tests: unit and integration tests
 
+## Architecture Notes (GUI Ready)
+
+The app is split into reusable services so you can later add WinForms, WPF, or WinUI without rewriting core quiz logic.
+
+- QuizCatalogService: resolves settings, separators, quiz files, and card loading.
+- QuizSessionService: quiz session state machine (prompt, reveal answer, move next).
+- IUserInteraction + ConsoleUserInteraction: console adapter layer.
+
+A GUI can use QuizCatalogService and QuizSessionService directly, and replace IUserInteraction with view-model or window logic.
+
 ## Prerequisites
 
 - .NET 10 SDK installed
@@ -115,3 +125,4 @@ Run build for the app only:
 - Lines beginning with # are treated as comments.
 - Empty lines are ignored.
 - The app parses the first matching separator found in each line.
+- Quiz data files are validated by tests to ensure card lines parse correctly.

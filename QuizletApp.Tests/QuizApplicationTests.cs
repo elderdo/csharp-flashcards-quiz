@@ -15,11 +15,32 @@ public class QuizApplicationTests
             QuizFiles = []
         };
         var ui = new FakeUi([]);
-        var app = new QuizApplication(catalog, ui);
+        var app = new QuizApplication(catalog, new QuizSessionService(), ui);
 
         await app.RunAsync();
 
         Assert.Contains(ui.Output, line => line.Contains("No quiz files found", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Fact]
+    public async Task RunAsync_WithInvalidThenValidSelection_LoadsSelectedQuizAndAllowsQuit()
+    {
+        var expectedFile = Path.Combine("data", "b.txt");
+        var catalog = new StubCatalogService
+        {
+            DataDirectory = "data",
+            Separators = ["\t"],
+            QuizFiles = [Path.Combine("data", "a.txt"), expectedFile],
+            Cards = [new Flashcard("Q1", "A1")]
+        };
+        var ui = new FakeUi(["x", "2", "q"]);
+        var app = new QuizApplication(catalog, new QuizSessionService(), ui);
+
+        await app.RunAsync();
+
+        Assert.Equal(expectedFile, catalog.LastLoadedQuizFile);
+        Assert.Contains(ui.Output, line => line.Contains("Invalid selection", StringComparison.OrdinalIgnoreCase));
+        Assert.Contains(ui.Output, line => line.Contains("Q: Q1", StringComparison.Ordinal));
     }
 
     private sealed class StubCatalogService : IQuizCatalogService
@@ -28,11 +49,16 @@ public class QuizApplicationTests
         public IReadOnlyList<string> Separators { get; init; } = ["\t"];
         public IReadOnlyList<string> QuizFiles { get; init; } = [];
         public List<Flashcard> Cards { get; init; } = [];
+        public string? LastLoadedQuizFile { get; private set; }
 
         public string GetDataDirectory() => DataDirectory;
         public IReadOnlyList<string> GetSeparators() => Separators;
         public IReadOnlyList<string> GetQuizFiles(string dataDirectory) => QuizFiles;
-        public List<Flashcard> LoadCards(string quizFile, IReadOnlyList<string> separators) => Cards;
+        public List<Flashcard> LoadCards(string quizFile, IReadOnlyList<string> separators)
+        {
+            LastLoadedQuizFile = quizFile;
+            return Cards;
+        }
     }
 
     private sealed class FakeUi(IEnumerable<string> inputs) : IUserInteraction
