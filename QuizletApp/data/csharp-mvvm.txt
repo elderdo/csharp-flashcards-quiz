@@ -1,0 +1,10 @@
+What does MVVM stand for?	Model-View-ViewModel.
+What is the primary responsibility of the View in MVVM?	Render UI and forward user interactions, with minimal logic.
+What is the primary responsibility of the ViewModel?	Expose state and commands for the view, independent of UI framework details.
+Why is MVVM useful for testing?	ViewModel logic can be unit tested without rendering UI.
+In this app, which service fits the ViewModel-friendly role for quiz progression?	QuizSessionService, because it controls prompt/answer/next state transitions.
+In this app, which service fits data/catalog responsibilities for a ViewModel?	QuizCatalogService, because it resolves files, settings, separators, and cards.
+What pattern allows swapping console UI for WPF/WinUI UI?	Dependency inversion via IUserInteraction abstraction.
+What should a ViewModel avoid referencing directly?	Concrete UI controls and framework-specific view types.
+What is data binding in MVVM?	Connecting view properties to ViewModel properties so UI updates with state changes.
+What is a command in MVVM?	An invokable action exposed by the ViewModel for UI interaction.

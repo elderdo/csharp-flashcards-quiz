@@ -1,0 +1,10 @@
+What does SOLID stand for?	Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
+How does this app apply Single Responsibility Principle?	Services have focused roles: parsing, loading, settings, catalog, and session progression.
+How does this app apply Dependency Inversion Principle?	QuizApplication depends on interfaces (for example IQuizCatalogService and IUserInteraction), not concrete classes.
+Which principle is supported by interfaces like IFlashcardParser and IFlashcardLoader?	Interface Segregation Principle, because consumers depend only on needed contracts.
+How is Open/Closed Principle encouraged in this app?	You can add new implementations of service interfaces without changing consumers.
+What is encapsulation in OOP?	Bundling data and behavior with controlled access.
+Where is encapsulation visible in this app?	QuizSession keeps internal index/state and exposes controlled progression methods.
+What is composition over inheritance?	Building behavior by combining collaborating objects instead of deep base classes.
+How does this app favor composition?	QuizApplication composes multiple services through dependency injection.
+Why do abstractions improve maintainability?	They reduce coupling, simplify testing, and allow safer feature changes.

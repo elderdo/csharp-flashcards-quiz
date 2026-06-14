@@ -145,6 +145,8 @@ This fails fast when any quiz line has an invalid format.
 - csharp-async-await-pitfalls.txt
 - csharp-collections-dictionaries.txt
 - csharp-unit-testing.txt
+- csharp-mvvm.txt
+- csharp-oop-solid-principles.txt
 
 Each quiz file is intentionally focused to keep study sessions short.
 
