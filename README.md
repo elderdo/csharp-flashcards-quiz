@@ -21,6 +21,16 @@ A GUI can use QuizCatalogService and QuizSessionService directly, and replace IU
 
 - .NET 10 SDK installed
 
+## Initial Setup
+
+From the workspace root:
+
+1. dotnet restore QuizletApp/QuizletApp.csproj
+2. dotnet restore QuizletApp.Tests/QuizletApp.Tests.csproj
+3. dotnet test QuizletApp.Tests/QuizletApp.Tests.csproj
+
+If step 3 passes, the app and quiz data are configured correctly.
+
 ## Run The App
 
 From the workspace root:
@@ -33,6 +43,11 @@ If you want to add command-line separators while running:
 - dotnet run -- --separator ###
 - dotnet run -- -s @@@
 - dotnet run -- --separator=TAB
+
+If you want to use a custom settings file:
+
+- dotnet run -- --settings mysettings.json
+- dotnet run -- --settings=C:/path/to/mysettings.json
 
 ## Where Quiz Files Live
 
@@ -55,6 +70,10 @@ question<separator>answer
 Example with TAB separator:
 
 What does ?? do in C#? Null-coalescing operator; returns left if not null, otherwise right.
+
+You can also use custom tokens:
+
+What is inversion of control?###The framework controls object creation and flow.
 
 Built-in separators:
 
@@ -83,10 +102,11 @@ Example:
 
 DataDirectory can be relative to the app folder or an absolute path.
 
-You can also choose a different settings file at runtime:
+Tips:
 
-- dotnet run -- --settings mysettings.json
-- dotnet run -- --settings=C:/path/to/mysettings.json
+- Keep DataDirectory as data unless you need a shared folder.
+- Use CustomSeparators when your questions/answers frequently include commas.
+- Prefer multi-character separators such as ### for readability.
 
 ## Create More Quizzes
 
@@ -95,11 +115,26 @@ You can also choose a different settings file at runtime:
 3. Save the file with .txt, .tsv, or .csv extension.
 4. Run the app and select the file from the menu.
 
+Recommended authoring rules:
+
+- Keep each line as one card only.
+- Avoid empty question or answer text.
+- Use # at the beginning of a line for comments.
+- If your separator appears in normal sentence text often, switch to a custom token (for example ###).
+
 Suggested naming style:
 
 - csharp-generics-basics.txt
 - csharp-async-await.txt
 - csharp-pattern-matching.txt
+
+## Validate Quiz Files
+
+Run this to validate all quiz files parse correctly:
+
+1. dotnet test QuizletApp.Tests/QuizletApp.Tests.csproj --filter QuizDataFilesTests
+
+This fails fast when any quiz line has an invalid format.
 
 ## Existing C# Quiz Sets
 
@@ -109,6 +144,8 @@ Suggested naming style:
 - csharp-linq-syntax-patterns.txt
 - csharp-async-await-pitfalls.txt
 - csharp-collections-dictionaries.txt
+
+Each quiz file is intentionally focused to keep study sessions short.
 
 ## Tests
 
