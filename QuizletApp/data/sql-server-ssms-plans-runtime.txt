@@ -1,0 +1,10 @@
+In SSMS, how do you view the estimated execution plan without running query?	Use Display Estimated Execution Plan (Ctrl+L).
+In SSMS, how do you capture the actual execution plan?	Enable Include Actual Execution Plan (Ctrl+M), then execute.
+Where can you quickly inspect elapsed time and I/O in SSMS messages?	In the Messages tab when STATISTICS TIME/IO are ON.
+What SSMS report helps identify expensive cached queries?	Standard Reports > Performance > Top Queries by Total CPU Time (or duration/read metrics).
+How can Query Store help performance analysis?	It tracks query runtime history and plan changes over time.
+What does a warning icon in execution plan often indicate?	Potential issues such as spills, implicit conversions, or missing index hints.
+How do you compare two plans in SSMS?	Open .sqlplan files and use plan comparison features.
+Why run query multiple times during testing?	To separate cold-cache effects from steady-state behavior.
+What should you record when benchmarking stored procedures?	CPU time, elapsed time, logical reads, parameters, and row counts.
+What is a safe way to test procedure performance changes?	Use representative test data and compare baseline vs changed plan/runtime metrics.

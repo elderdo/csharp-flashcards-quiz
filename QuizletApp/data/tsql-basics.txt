@@ -1,0 +1,10 @@
+What does SELECT TOP (10) do in T-SQL?	Returns the first 10 rows of the result set (order depends on ORDER BY).
+Why should TOP usually be paired with ORDER BY?	Without ORDER BY the returned rows are not deterministic.
+What does WHERE filter?	Rows before projection/return.
+What does GROUP BY do?	Aggregates rows into groups for aggregate functions.
+What is the difference between WHERE and HAVING?	WHERE filters rows before grouping; HAVING filters groups after aggregation.
+What does INNER JOIN return?	Rows that match in both joined tables.
+What does LEFT JOIN return?	All rows from left table plus matching rows from right table; unmatched right columns are NULL.
+What is a clustered index in SQL Server?	It defines the physical order of data pages for the table.
+What is a nonclustered index?	A separate index structure with key and row locator (and optional included columns).
+What is parameter sniffing?	SQL Server reuses a plan optimized for one parameter set, which may be poor for others.
