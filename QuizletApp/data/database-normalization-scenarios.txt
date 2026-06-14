@@ -1,0 +1,10 @@
+If OrderLine has key (OrderId, ProductId) and ProductName depends only on ProductId, which normal form is violated?	2NF is violated due to partial dependency.
+If Employee table stores DepartmentId and DepartmentName in same row, what likely issue exists?	A transitive dependency risk; DepartmentName belongs in a department table for 3NF.
+What anomaly can happen if customer address is duplicated across many order rows?	Update anomaly; one address change may miss rows and create inconsistency.
+When might BCNF decomposition be needed after reaching 3NF?	When a determinant in a functional dependency is not a superkey.
+A table has independent multi-valued facts about a key (skills and languages). Which normal form may be violated?	4NF due to multivalued dependency.
+If decomposition creates many joins and hurts performance, what is a practical option?	Selective denormalization with clear constraints and consistency strategy.
+What should you verify after decomposition into higher normal forms?	Lossless joins and dependency preservation where required.
+Why is surrogate key alone not enough for good design?	You still must model real functional dependencies and constraints correctly.
+What does "atomic" mean in normalization context?	Each field stores one indivisible value for the modeled domain.
+Why can over-normalization hurt some workloads?	Too many joins can increase query complexity and latency for read-heavy paths.

@@ -147,8 +147,37 @@ This fails fast when any quiz line has an invalid format.
 - csharp-unit-testing.txt
 - csharp-mvvm.txt
 - csharp-oop-solid-principles.txt
+- database-normalization-rules.txt
+- database-normalization-scenarios.txt
 
 Each quiz file is intentionally focused to keep study sessions short.
+
+## Suggested Study Order
+
+1. csharp-operators.txt (10-15 minutes)
+2. csharp-nullable-variables.txt (10-15 minutes)
+3. csharp-linq-options.txt (15-20 minutes)
+4. csharp-linq-syntax-patterns.txt (15-20 minutes)
+5. csharp-collections-dictionaries.txt (10-15 minutes)
+6. csharp-async-await-pitfalls.txt (15-20 minutes)
+7. csharp-unit-testing.txt (15-20 minutes)
+8. csharp-oop-solid-principles.txt (15-20 minutes)
+9. csharp-mvvm.txt (15-20 minutes)
+10. database-normalization-rules.txt (15-20 minutes)
+11. database-normalization-scenarios.txt (15-20 minutes)
+
+## YouTube Learning References
+
+Use these as quick-start references for each category.
+
+- C# operators and nullable types: https://www.youtube.com/results?search_query=c%23+operators+nullable+reference+types
+- LINQ options and syntax: https://www.youtube.com/results?search_query=c%23+linq+method+syntax+query+syntax
+- Async/await pitfalls: https://www.youtube.com/results?search_query=c%23+async+await+pitfalls
+- Collections and dictionaries: https://www.youtube.com/results?search_query=c%23+dictionary+hashset+list+best+practices
+- Unit testing (xUnit): https://www.youtube.com/results?search_query=c%23+xunit+unit+testing
+- OOP and SOLID principles: https://www.youtube.com/results?search_query=c%23+solid+principles+oop
+- MVVM (WPF/WinUI): https://www.youtube.com/results?search_query=c%23+mvvm+wpf+winui
+- Database normalization: https://www.youtube.com/results?search_query=database+normalization+1nf+2nf+3nf+bcnf+4nf+5nf
 
 ## Tests
 
