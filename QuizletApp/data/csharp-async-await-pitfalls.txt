@@ -1,0 +1,10 @@
+What is a common cause of deadlocks with async code in older UI/ASP.NET contexts?	Calling .Result or .Wait() on a Task instead of awaiting it.
+Why is async void generally discouraged?	It cannot be awaited and exceptions are harder to observe; use async Task except for event handlers.
+What does ConfigureAwait(false) do?	It tells await not to capture the current synchronization context before continuation.
+When should you use CancellationToken with async APIs?	Use it for cancelable operations so callers can stop work cooperatively.
+What is the difference between Task.WhenAll and Task.WhenAny?	WhenAll waits for all tasks; WhenAny completes when the first task completes.
+If one task fails in Task.WhenAll, what happens?	The returned task faults; awaiting it throws (with all exceptions available via Exception.InnerExceptions).
+Why should CPU-bound work not be made async by itself?	Async is for non-blocking I/O; CPU-bound work may need Task.Run or parallel constructs.
+What is the difference between await foreach and foreach?	await foreach iterates IAsyncEnumerable asynchronously; foreach iterates synchronous IEnumerable.
+How do you avoid forgetting to await a Task-returning method?	Enable analyzers/warnings and always await or explicitly store/handle the Task.
+What is the best return type for async methods that produce a value?	Task<T>.

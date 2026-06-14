@@ -1,0 +1,10 @@
+What is the difference between == and === in C#?	C# supports == for value equality (when overloaded) and does not have ===.
+What does ?? do in C#?	Null-coalescing operator; returns left value if not null, otherwise right value.
+What does ??= do in C#?	Assigns the right value only when the left side is null.
+What does ?. do in C#?	Null-conditional access; returns null instead of throwing when the left side is null.
+What does ! after an expression mean in nullable-aware code?	Null-forgiving operator; it tells the compiler to suppress nullable warnings for that expression.
+What is the difference between & and && for bool values?	&& short-circuits; & always evaluates both sides.
+What is the difference between | and || for bool values?	|| short-circuits; | always evaluates both sides.
+What does ^= do?	Bitwise XOR assignment (x ^= y is equivalent to x = x ^ y).
+What does << do?	Left-shift operator; shifts bits to the left.
+What does is do in pattern matching?	Checks type/pattern match, such as x is int n.

@@ -1,0 +1,9 @@
+What are the rules for 1NF?	All values are atomic; no repeating groups; rows are unique.
+What does atomic mean in 1NF?	Each field holds one indivisible value, not a list or set.
+What are the rules for 2NF?	Must be in 1NF; no partial dependency; every non-key attribute depends on the whole composite key.
+What are the rules for 3NF?	Must be in 2NF; no transitive dependency; non-key attributes must not depend on other non-key attributes.
+What are the rules for BCNF?	For every functional dependency X -> Y, X must be a superkey.
+What is a superkey?	Any set of attributes that uniquely identifies a row.
+What are the rules for 4NF?	Must be in BCNF; no non-trivial multivalued dependency except on a superkey.
+What are the rules for 5NF?	Must be in 4NF; no non-trivial join dependency except those implied by candidate keys.
+What is the short summary for all normal forms?	1NF: atomic; 2NF: whole key; 3NF: no non-key chains; BCNF: superkey only; 4NF: no multivalued dependency; 5NF: no join dependency.

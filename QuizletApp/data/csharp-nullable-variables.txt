@@ -1,0 +1,10 @@
+How do you declare a nullable reference type string?	string? name;
+How do you declare a nullable value type int?	int? count; (same as Nullable<int> count;)
+How do you declare a non-nullable reference with initialization?	string name = "Douglas";
+How do you safely assign a fallback when a nullable string may be null?	string safe = maybeName ?? "(unknown)";
+How do you throw if a nullable value is null using ?? operator?	string required = maybeName ?? throw new ArgumentNullException(nameof(maybeName));
+When should you use ?. with chained access?	Use it when any object in the chain can be null, for example user?.Address?.City.
+What is a common way to initialize a non-nullable property in constructors?	Set it in the constructor so it cannot remain null.
+How do you check nullable int has a value?	if (count.HasValue) { ... } or if (count is not null) { ... }
+How do you get value from nullable int after null check?	Use count.Value after checking, or use count ?? 0 for fallback.
+What does #nullable enable do?	Enables nullable reference type analysis in that file/scope.

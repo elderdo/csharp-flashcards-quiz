@@ -1,0 +1,4 @@
+What are the rules for 1NF?	All values are atomic; no repeating groups; rows are unique.
+What does atomic mean in 1NF?	Each field holds one indivisible value, not a list or set.
+Does 1NF allow repeating groups?	No.
+Must rows be unique in 1NF?	Yes.

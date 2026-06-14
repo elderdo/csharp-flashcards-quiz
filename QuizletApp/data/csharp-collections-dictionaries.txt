@@ -1,0 +1,10 @@
+When would you choose List<T> over Dictionary<TKey,TValue>?	Use List<T> for ordered items by index; use Dictionary for fast key-based lookup.
+What is the average lookup complexity for Dictionary<TKey,TValue>?	Approximately O(1) average case.
+What is safer than dict[key] when a key may be missing?	Use TryGetValue.
+What does HashSet<T> provide compared to List<T>?	Fast uniqueness checks and set operations.
+How do you check if a key exists in Dictionary?	Use ContainsKey(key).
+What happens when adding the same key twice with Add?	It throws an exception.
+How can you overwrite or insert a value by key?	Use dict[key] = value.
+What collection preserves insertion order and allows duplicates?	List<T>.
+What collection should you use for key-value pairs that should not change?	ReadOnlyDictionary<TKey,TValue> or expose IReadOnlyDictionary<TKey,TValue>.
+What LINQ method can convert a sequence to a dictionary?	ToDictionary.

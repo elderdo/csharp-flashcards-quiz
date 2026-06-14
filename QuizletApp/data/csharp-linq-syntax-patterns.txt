@@ -1,0 +1,12 @@
+How do you project to anonymous type with method syntax?	people.Select(p => new { p.Name, p.Age })
+How do you filter then project with query syntax?	from p in people where p.Age >= 18 select p.Name
+How do you flatten nested collections with query syntax?	from c in customers from o in c.Orders select o
+What is the method-syntax equivalent of query syntax where?	Where(predicate)
+What is the method-syntax equivalent of query syntax select?	Select(selector)
+How do you perform inner join with query syntax?	from c in customers join o in orders on c.Id equals o.CustomerId select new { c.Name, o.Id }
+How do you perform inner join with method syntax?	customers.Join(orders, c => c.Id, o => o.CustomerId, (c, o) => new { c.Name, o.Id })
+How do you group in query syntax?	from p in people group p by p.Department into g select g
+How do you group in method syntax?	people.GroupBy(p => p.Department)
+How do you sort ascending then descending with query syntax?	from p in people orderby p.LastName, p.FirstName descending select p
+How do you sort ascending then descending with method syntax?	people.OrderBy(p => p.LastName).ThenByDescending(p => p.FirstName)
+How do you force immediate execution of a query?	Call terminal operators like ToList(), ToArray(), Count(), First(), or Single().

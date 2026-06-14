@@ -1,0 +1,10 @@
+What does Where do in LINQ?	Filters a sequence based on a predicate.
+What does Select do in LINQ?	Projects each element into a new form.
+What does SelectMany do?	Flattens nested collections into one sequence.
+What is the difference between First and FirstOrDefault?	First throws if empty; FirstOrDefault returns default value.
+What is the difference between Single and SingleOrDefault?	Single expects exactly one match (throws otherwise); SingleOrDefault allows zero or one.
+What does Any return?	True if at least one element exists or matches a predicate.
+What does All return?	True only if every element matches a predicate.
+What does OrderBy followed by ThenBy do?	Primary sort by first key, secondary sort by next key.
+What does GroupBy produce?	Groups elements by key into grouped sequences.
+When is LINQ to Objects execution deferred?	Most query operators are deferred until enumeration (for example ToList forces execution).
