@@ -1,0 +1,10 @@
+What does Arrange in Arrange-Act-Assert mean?	Prepare test data, dependencies, and initial conditions.
+What does Act in Arrange-Act-Assert mean?	Execute the specific behavior under test.
+What does Assert in Arrange-Act-Assert mean?	Verify the expected outcome.
+What is a unit test?	A fast, isolated test that verifies a small unit of behavior.
+Why should unit tests avoid external resources when possible?	To keep tests deterministic, fast, and easy to run.
+What is the difference between a stub and a mock?	A stub provides fixed responses; a mock also verifies interactions.
+What makes a flaky test?	A test that passes and fails unpredictably due to timing/state/environment.
+What is a good test naming style?	Describe scenario and expectation, such as Method_WhenCondition_ShouldResult.
+When should you use parameterized tests?	When the same logic should be verified with multiple input/output cases.
+What is code coverage?	A metric showing which code paths were executed by tests, not proof of correctness.
