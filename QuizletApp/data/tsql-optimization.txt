@@ -1,0 +1,10 @@
+What command helps inspect query I/O usage in SQL Server?	SET STATISTICS IO ON.
+What command helps inspect query CPU/time in SQL Server?	SET STATISTICS TIME ON.
+What is an execution plan?	A detailed strategy SQL Server uses to execute a query.
+What does a key lookup often indicate?	An index seek followed by extra row fetches for missing columns.
+How can INCLUDE columns help an index?	They can create a covering index and reduce key lookups.
+Why can SELECT * hurt performance?	It returns unnecessary columns and may prevent efficient covering index usage.
+What is SARGable predicate design?	Write predicates that allow index seeks (for example avoid wrapping indexed columns in functions).
+Why can implicit conversions be a problem?	They can force scans and reduce index usage.
+What should you check before adding indexes?	Query patterns, write overhead, existing indexes, and maintenance cost.
+What DMV can show historical query stats?	sys.dm_exec_query_stats joined with query text/plan DMVs.

@@ -149,6 +149,10 @@ This fails fast when any quiz line has an invalid format.
 - csharp-oop-solid-principles.txt
 - database-normalization-rules.txt
 - database-normalization-scenarios.txt
+- tsql-basics.txt
+- tsql-optimization.txt
+- sql-server-ssms-plans-runtime.txt
+- entity-framework-sql-server.txt
 
 Each quiz file is intentionally focused to keep study sessions short.
 
@@ -165,6 +169,10 @@ Each quiz file is intentionally focused to keep study sessions short.
 9. csharp-mvvm.txt (15-20 minutes)
 10. database-normalization-rules.txt (15-20 minutes)
 11. database-normalization-scenarios.txt (15-20 minutes)
+12. tsql-basics.txt (15-20 minutes)
+13. tsql-optimization.txt (20-25 minutes)
+14. sql-server-ssms-plans-runtime.txt (20-25 minutes)
+15. entity-framework-sql-server.txt (15-20 minutes)
 
 ## YouTube Learning References
 
@@ -178,6 +186,10 @@ Use these as quick-start references for each category.
 - OOP and SOLID principles: https://www.youtube.com/results?search_query=c%23+solid+principles+oop
 - MVVM (WPF/WinUI): https://www.youtube.com/results?search_query=c%23+mvvm+wpf+winui
 - Database normalization: https://www.youtube.com/results?search_query=database+normalization+1nf+2nf+3nf+bcnf+4nf+5nf
+- T-SQL basics: https://www.youtube.com/results?search_query=t-sql+basics+sql+server
+- SQL Server query optimization: https://www.youtube.com/results?search_query=sql+server+query+optimization+execution+plan
+- SSMS execution plans and performance checks: https://www.youtube.com/results?search_query=ssms+actual+execution+plan+statistics+io+time
+- Entity Framework with SQL Server: https://www.youtube.com/results?search_query=entity+framework+core+sql+server+performance
 
 ## Tests
 
