@@ -1,0 +1,10 @@
+What is the goal of normalization?	Reduce redundancy and prevent update anomalies while preserving data integrity.
+What is 1NF?	Each column contains atomic values and each row is uniquely identifiable.
+What is 2NF?	Table is in 1NF and every non-key attribute is fully dependent on the whole primary key.
+What is 3NF?	Table is in 2NF and has no transitive dependencies from key to non-key through another non-key.
+What is BCNF?	For every non-trivial functional dependency X -> Y, X must be a superkey.
+What is 4NF?	Table is in BCNF and has no non-trivial multivalued dependencies except those on a key.
+What is 5NF?	Table is in 4NF and cannot be further decomposed without losing valid join dependencies.
+What is a partial dependency?	A non-key attribute depending on only part of a composite key.
+What is a transitive dependency?	A non-key attribute depending on another non-key attribute instead of directly on the key.
+What is a denormalization tradeoff?	Potentially faster reads at the cost of more redundancy and harder consistency management.
